@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CountryStoreRequest;
 use App\Models\Country;
 use Illuminate\Http\Request;
+use PHPUnit\Framework\Constraint\Count;
 
 class CountryController extends Controller
 {
@@ -65,9 +66,9 @@ class CountryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Country $country)
     {
-        //
+        return view('countries.edit', compact('country'));
     }
 
     /**
@@ -77,9 +78,12 @@ class CountryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CountryStoreRequest $request, Country $country)
     {
-        //
+        $country->update($request->validated());
+        
+        return redirect()->route('countries.index')->with('message', 'Country Updated Successfully');
+
     }
 
     /**
@@ -88,8 +92,10 @@ class CountryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Country $country)
     {
-        //
+        $country->delete();
+        return redirect()->route('countries.index')->with('message', 'Country Deleted Successfully');
+
     }
 }

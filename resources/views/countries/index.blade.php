@@ -4,7 +4,7 @@
 
 
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Users</h1>
+    <h1 class="h3 mb-0 text-gray-800">Country</h1>
 </div>
     
   <div class="row">
@@ -54,7 +54,7 @@
                         <td>{{$country->name}}</td>
                         <td>{{$country->country_code}}</td>
                         <td>
-                            <a href="{{route('countries.index', $country->id)}}" class="btn btn-success">
+                            <a href="{{route('countries.edit', $country->id)}}" class="btn btn-success">
                                 Edit
                             </a>
                         </td>
