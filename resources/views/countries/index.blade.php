@@ -20,7 +20,7 @@
         <div class="card-header">
           <div class="row">
             <div class="col">
-              <form method="GET" action="{{route('users.index')}}" >
+              <form method="GET" action="{{route('countries.index')}}" >
                 <div class="form-row align-items-center">
                   <div class="col">
                     <input type="search" name="search" class="form-control mb-2"  id="inlineFormInput" placeholder="Searc">
@@ -32,7 +32,7 @@
               </form>
             </div>
             <div>
-              <a href="{{route('users.create')}}" class="btn btn-primary mb-2">Create</a>
+              <a href="{{route('countries.create')}}" class="btn btn-primary mb-2">Create</a>
             </div>
           </div>
          
@@ -41,20 +41,20 @@
             <table class="table">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Username</th>
-                    <th scope="col">Email</th>
+                    <th scope="col">#ID</th>
+                    <th scope="col">Country Name</th>
+                    <th scope="col">Country Code</th>
                     <th scope="col">Manage</th>
                   </tr>
                 </thead>
                 <tbody>
-                    @foreach ($users as $user)
+                    @foreach ($countries as $country)
                      <tr>
-                        <th scope="row">{{$user->id}}</th>
-                        <td>{{$user->username}}</td>
-                        <td>{{$user->email}}</td>
+                        <th scope="row">{{$country->id}}</th>
+                        <td>{{$country->name}}</td>
+                        <td>{{$country->country_code}}</td>
                         <td>
-                            <a href="{{route('users.edit', $user->id)}}" class="btn btn-success">
+                            <a href="{{route('countries.index', $country->id)}}" class="btn btn-success">
                                 Edit
                             </a>
                         </td>
