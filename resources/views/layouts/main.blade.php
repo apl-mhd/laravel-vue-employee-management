@@ -43,7 +43,7 @@
 
               <!-- Nav Item - Employee Management -->
               <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="/employees">
                     <span>Employee Management</span></a>
             </li>
 
@@ -186,11 +186,11 @@
     <!-- Bootstrap core JavaScript-->
     <script src="{{mix('js/app.js')}}"></script>
 
+
     <!-- Core plugin JavaScript-->
 
     <!-- Custom scripts for all pages-->
-    <script src="{{ asset('js/sb-admin.min.js') }}"></script>
-
+    <script src="{{asset('js/sb-admin.min.js')}}"></script>
     <!-- Page level plugins -->
    
 </body>
